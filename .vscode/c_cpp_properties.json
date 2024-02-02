@@ -1,0 +1,12 @@
+{
+    "configurations": [
+        {
+            "name": "Your Configuration Name",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ]
+            // other settings...
+        }
+    ],
+    "version": 4
+}
