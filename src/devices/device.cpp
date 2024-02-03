@@ -17,115 +17,115 @@ Device::Device(libusb_device_descriptor* device)
 }
 
 //setters
-void Device::setIdVendor(uint16_t idVendor)
+void Device::SetIdVendor(uint16_t idVendor)
 {
     this->idVendor = idVendor;
 }
-void Device::setIdProduct(uint16_t idProduct)
+void Device::SetIdProduct(uint16_t idProduct)
 {
     this->idProduct = idProduct;
 }
-void Device::setBcdUSB(uint16_t bcdUSB)
+void Device::SetBcdUSB(uint16_t bcdUSB)
 {
     this->bcdUSB = bcdUSB;
 }
-void Device::setBDeviceClass(uint16_t bDeviceClass)
+void Device::SetBDeviceClass(uint16_t bDeviceClass)
 {
     this->bDeviceClass = bDeviceClass;
 }
-void Device::setBDeviceSubClass(uint16_t bDeviceSubClass)
+void Device::SetBDeviceSubClass(uint16_t bDeviceSubClass)
 {
     this->bDeviceSubClass = bDeviceSubClass;
 }
-void Device::setBDeviceProtocol(uint8_t bDeviceProtocol)
+void Device::SetBDeviceProtocol(uint8_t bDeviceProtocol)
 {
     this->bDeviceProtocol = bDeviceProtocol;
 }
-void Device::setBMaxPacketSize0(uint8_t bMaxPacketSize0)
+void Device::SetBMaxPacketSize0(uint8_t bMaxPacketSize0)
 {
     this->bMaxPacketSize0 = bMaxPacketSize0;
 }
-void Device::setIManufacturer(uint8_t iManufacturer)
+void Device::SetIManufacturer(uint8_t iManufacturer)
 {
     this->iManufacturer = iManufacturer;
 }
-void Device::setIProduct(uint8_t iProduct)
+void Device::SetIProduct(uint8_t iProduct)
 {
     this->iProduct = iProduct;
 }
-void Device::setIManufacturerBuffer(unsigned char *iManufacturerBuffer, size_t length)
+void Device::SetIManufacturerBuffer(unsigned char *iManufacturerBuffer, size_t length)
 {
     //because its a pointer we want to make a local copy
     size_t copyLength = (length < sizeof(this->iManufacturerBuffer)) ? length : sizeof(this->iManufacturerBuffer) - 1;
     memcpy(this->iManufacturerBuffer, iManufacturerBuffer, copyLength);
     this->iManufacturerBuffer[copyLength] = '\0';
 }
-void Device::setIProductBuffer(unsigned char *iProductBuffer, size_t length)
+void Device::SetIProductBuffer(unsigned char *iProductBuffer, size_t length)
 {
     //because its a pointer we want to make a local copy
     size_t copyLength = (length < sizeof(this->iProductBuffer)) ? length : sizeof(this->iProductBuffer) - 1;
     memcpy(this->iProductBuffer, iProductBuffer, copyLength);
     this->iProductBuffer[copyLength] = '\0';
 }
-void Device::setISerialNumber(uint8_t iSerialNumber)
+void Device::SetISerialNumber(uint8_t iSerialNumber)
 {
     this->iSerialNumber = iSerialNumber;
 }
-void Device::setBNumConfigurations(uint8_t bNumConfigurations)
+void Device::SetBNumConfigurations(uint8_t bNumConfigurations)
 {
     this->bNumConfigurations = bNumConfigurations;
 }
 
 //getters
-uint16_t Device::getIdVendor()
+uint16_t Device::GetIdVendor()
 {
     return this->idVendor;
 }
-uint16_t Device::getIdProduct()
+uint16_t Device::GetIdProduct()
 {
     return this->idProduct;
 }
-uint16_t Device::getBcdUSB()
+uint16_t Device::GetBcdUSB()
 {
     return this->bcdUSB;
 }
-uint16_t Device::getBDeviceClass()
+uint16_t Device::GetBDeviceClass()
 {
     return this->bDeviceClass;
 }
-uint16_t Device::getBDeviceSubClass()
+uint16_t Device::GetBDeviceSubClass()
 {
     return this->bDeviceSubClass;
 }
-uint8_t Device::getBDeviceProtocol()
+uint8_t Device::GetBDeviceProtocol()
 {
     return this->bDeviceProtocol;
 }
-uint8_t Device::getBMaxPacketSize0()
+uint8_t Device::GetBMaxPacketSize0()
 {
     return this->bMaxPacketSize0;
 }
-uint8_t Device::getIManufacturer()
+uint8_t Device::GetIManufacturer()
 {
     return this->iManufacturer;
 }
-uint8_t Device::getIProduct()
+uint8_t Device::GetIProduct()
 {
     return this->iProduct;
 }
-unsigned char* Device::getIManufacturerBuffer()
+unsigned char* Device::GetIManufacturerBuffer()
 {
     return this->iManufacturerBuffer;
 }
-unsigned char* Device::getIProductBuffer()
+unsigned char* Device::GetIProductBuffer()
 {
     return this->iProductBuffer;
 }
-uint8_t Device::getISerialNumber()
+uint8_t Device::GetISerialNumber()
 {
     return this->iSerialNumber;
 }
-uint8_t Device::getBNumConfigurations()
+uint8_t Device::GetBNumConfigurations()
 {
     return this->bNumConfigurations;
 }

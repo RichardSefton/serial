@@ -194,6 +194,8 @@ src/devices/device.o: src/devices/device.cpp.o
 
 # target to build an object file
 src/devices/device.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial.dir/build.make CMakeFiles/serial.dir/src/devices/device.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial_test.dir/build.make CMakeFiles/serial_test.dir/src/devices/device.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/devices_test.dir/build.make CMakeFiles/devices_test.dir/src/devices/device.cpp.o
 .PHONY : src/devices/device.cpp.o
 
@@ -202,6 +204,8 @@ src/devices/device.i: src/devices/device.cpp.i
 
 # target to preprocess a source file
 src/devices/device.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial.dir/build.make CMakeFiles/serial.dir/src/devices/device.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial_test.dir/build.make CMakeFiles/serial_test.dir/src/devices/device.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/devices_test.dir/build.make CMakeFiles/devices_test.dir/src/devices/device.cpp.i
 .PHONY : src/devices/device.cpp.i
 
@@ -210,6 +214,8 @@ src/devices/device.s: src/devices/device.cpp.s
 
 # target to generate assembly for a file
 src/devices/device.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial.dir/build.make CMakeFiles/serial.dir/src/devices/device.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial_test.dir/build.make CMakeFiles/serial_test.dir/src/devices/device.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/devices_test.dir/build.make CMakeFiles/devices_test.dir/src/devices/device.cpp.s
 .PHONY : src/devices/device.cpp.s
 
@@ -218,6 +224,8 @@ src/devices/devices.o: src/devices/devices.cpp.o
 
 # target to build an object file
 src/devices/devices.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial.dir/build.make CMakeFiles/serial.dir/src/devices/devices.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial_test.dir/build.make CMakeFiles/serial_test.dir/src/devices/devices.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/devices_test.dir/build.make CMakeFiles/devices_test.dir/src/devices/devices.cpp.o
 .PHONY : src/devices/devices.cpp.o
 
@@ -226,6 +234,8 @@ src/devices/devices.i: src/devices/devices.cpp.i
 
 # target to preprocess a source file
 src/devices/devices.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial.dir/build.make CMakeFiles/serial.dir/src/devices/devices.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial_test.dir/build.make CMakeFiles/serial_test.dir/src/devices/devices.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/devices_test.dir/build.make CMakeFiles/devices_test.dir/src/devices/devices.cpp.i
 .PHONY : src/devices/devices.cpp.i
 
@@ -234,6 +244,8 @@ src/devices/devices.s: src/devices/devices.cpp.s
 
 # target to generate assembly for a file
 src/devices/devices.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial.dir/build.make CMakeFiles/serial.dir/src/devices/devices.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial_test.dir/build.make CMakeFiles/serial_test.dir/src/devices/devices.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/devices_test.dir/build.make CMakeFiles/devices_test.dir/src/devices/devices.cpp.s
 .PHONY : src/devices/devices.cpp.s
 

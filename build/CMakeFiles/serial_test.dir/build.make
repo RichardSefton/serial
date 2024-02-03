@@ -97,21 +97,53 @@ CMakeFiles/serial_test.dir/src/terminal/terminal.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serial_test.dir/src/terminal/terminal.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/data/Documents/code/cpp/serial/src/terminal/terminal.cpp -o CMakeFiles/serial_test.dir/src/terminal/terminal.cpp.s
 
+CMakeFiles/serial_test.dir/src/devices/devices.cpp.o: CMakeFiles/serial_test.dir/flags.make
+CMakeFiles/serial_test.dir/src/devices/devices.cpp.o: ../src/devices/devices.cpp
+CMakeFiles/serial_test.dir/src/devices/devices.cpp.o: CMakeFiles/serial_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/data/Documents/code/cpp/serial/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/serial_test.dir/src/devices/devices.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/serial_test.dir/src/devices/devices.cpp.o -MF CMakeFiles/serial_test.dir/src/devices/devices.cpp.o.d -o CMakeFiles/serial_test.dir/src/devices/devices.cpp.o -c /mnt/data/Documents/code/cpp/serial/src/devices/devices.cpp
+
+CMakeFiles/serial_test.dir/src/devices/devices.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serial_test.dir/src/devices/devices.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/data/Documents/code/cpp/serial/src/devices/devices.cpp > CMakeFiles/serial_test.dir/src/devices/devices.cpp.i
+
+CMakeFiles/serial_test.dir/src/devices/devices.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serial_test.dir/src/devices/devices.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/data/Documents/code/cpp/serial/src/devices/devices.cpp -o CMakeFiles/serial_test.dir/src/devices/devices.cpp.s
+
+CMakeFiles/serial_test.dir/src/devices/device.cpp.o: CMakeFiles/serial_test.dir/flags.make
+CMakeFiles/serial_test.dir/src/devices/device.cpp.o: ../src/devices/device.cpp
+CMakeFiles/serial_test.dir/src/devices/device.cpp.o: CMakeFiles/serial_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/data/Documents/code/cpp/serial/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/serial_test.dir/src/devices/device.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/serial_test.dir/src/devices/device.cpp.o -MF CMakeFiles/serial_test.dir/src/devices/device.cpp.o.d -o CMakeFiles/serial_test.dir/src/devices/device.cpp.o -c /mnt/data/Documents/code/cpp/serial/src/devices/device.cpp
+
+CMakeFiles/serial_test.dir/src/devices/device.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/serial_test.dir/src/devices/device.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/data/Documents/code/cpp/serial/src/devices/device.cpp > CMakeFiles/serial_test.dir/src/devices/device.cpp.i
+
+CMakeFiles/serial_test.dir/src/devices/device.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/serial_test.dir/src/devices/device.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/data/Documents/code/cpp/serial/src/devices/device.cpp -o CMakeFiles/serial_test.dir/src/devices/device.cpp.s
+
 # Object files for target serial_test
 serial_test_OBJECTS = \
 "CMakeFiles/serial_test.dir/src/terminal/tests/terminal.test.cpp.o" \
-"CMakeFiles/serial_test.dir/src/terminal/terminal.cpp.o"
+"CMakeFiles/serial_test.dir/src/terminal/terminal.cpp.o" \
+"CMakeFiles/serial_test.dir/src/devices/devices.cpp.o" \
+"CMakeFiles/serial_test.dir/src/devices/device.cpp.o"
 
 # External object files for target serial_test
 serial_test_EXTERNAL_OBJECTS =
 
 serial_test: CMakeFiles/serial_test.dir/src/terminal/tests/terminal.test.cpp.o
 serial_test: CMakeFiles/serial_test.dir/src/terminal/terminal.cpp.o
+serial_test: CMakeFiles/serial_test.dir/src/devices/devices.cpp.o
+serial_test: CMakeFiles/serial_test.dir/src/devices/device.cpp.o
 serial_test: CMakeFiles/serial_test.dir/build.make
 serial_test: /usr/lib/x86_64-linux-gnu/libcurses.so
 serial_test: /usr/lib/x86_64-linux-gnu/libform.so
 serial_test: CMakeFiles/serial_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/data/Documents/code/cpp/serial/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable serial_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/data/Documents/code/cpp/serial/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable serial_test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/serial_test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

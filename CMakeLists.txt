@@ -16,14 +16,15 @@ include_directories(src)
 include_directories(src/terminal)
 include_directories(src/devices)
 
-
 # Main application
 add_executable(
     serial 
     main.cpp
     src/terminal/terminal.cpp
+    src/devices/devices.cpp
+    src/devices/device.cpp
 )
-target_link_libraries(serial ${CURSES_LIBRARIES})
+target_link_libraries(serial ${CURSES_LIBRARIES} ${LIBUSB1_LIBRARIES})
 
 # Google Test
 enable_testing()
@@ -35,8 +36,10 @@ add_executable(
     serial_test 
     src/terminal/tests/terminal.test.cpp 
     src/terminal/terminal.cpp
+    src/devices/devices.cpp
+    src/devices/device.cpp
 )
-target_link_libraries(serial_test gtest gtest_main pthread ${CURSES_LIBRARIES})
+target_link_libraries(serial_test gtest gtest_main pthread ${CURSES_LIBRARIES} ${LIBUSB1_LIBRARIES})
 # add_executable(serial_test ./src/terminal/tests/terminal.test.cpp)
 # target_link_libraries(serial_test ${GTEST_LIBRARIES} pthread)
 

@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/serial_test.dir/src/terminal/tests/terminal.test.cpp.o CMakeFiles/serial_test.dir/src/terminal/terminal.cpp.o -o serial_test  -lgtest -lgtest_main -lpthread -lcurses /usr/lib/x86_64-linux-gnu/libform.so 
+/usr/bin/c++ CMakeFiles/serial_test.dir/src/terminal/tests/terminal.test.cpp.o CMakeFiles/serial_test.dir/src/terminal/terminal.cpp.o CMakeFiles/serial_test.dir/src/devices/devices.cpp.o CMakeFiles/serial_test.dir/src/devices/device.cpp.o -o serial_test  -lgtest -lgtest_main -lpthread -lcurses /usr/lib/x86_64-linux-gnu/libform.so -lusb-1.0 

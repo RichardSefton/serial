@@ -1,3 +1,5 @@
+#pragma once
+
 #include <libusb-1.0/libusb.h>
 #include <libusb-1.0/libusb.h>
 
@@ -22,34 +24,34 @@ class Device
         Device(libusb_device_descriptor*);
 
         //setters
-        void setIdVendor(uint16_t);
-        void setIdProduct(uint16_t);
-        void setBcdUSB(uint16_t);
-        void setBDeviceClass(uint16_t);
-        void setBDeviceSubClass(uint16_t);
-        void setBDeviceProtocol(uint8_t);
-        void setBMaxPacketSize0(uint8_t);
-        void setIManufacturer(uint8_t);
-        void setIProduct(uint8_t);
-        void setIManufacturerBuffer(unsigned char*, size_t);
-        void setIProductBuffer(unsigned char*, size_t);
-        void setISerialNumber(uint8_t);
-        void setBNumConfigurations(uint8_t);
+        void SetIdVendor(uint16_t);
+        void SetIdProduct(uint16_t);
+        void SetBcdUSB(uint16_t);
+        void SetBDeviceClass(uint16_t);
+        void SetBDeviceSubClass(uint16_t);
+        void SetBDeviceProtocol(uint8_t);
+        void SetBMaxPacketSize0(uint8_t);
+        void SetIManufacturer(uint8_t);
+        void SetIProduct(uint8_t);
+        void SetIManufacturerBuffer(unsigned char*, size_t);
+        void SetIProductBuffer(unsigned char*, size_t);
+        void SetISerialNumber(uint8_t);
+        void SetBNumConfigurations(uint8_t);
 
         //getters
-        uint16_t getIdVendor();
-        uint16_t getIdProduct();
-        uint16_t getBcdUSB();
-        uint16_t getBDeviceClass();
-        uint16_t getBDeviceSubClass();
-        uint8_t getBDeviceProtocol();
-        uint8_t getBMaxPacketSize0();
-        uint8_t getIManufacturer();
-        uint8_t getIProduct();
-        unsigned char* getIManufacturerBuffer();
-        unsigned char* getIProductBuffer();
-        uint8_t getISerialNumber();
-        uint8_t getBNumConfigurations();
+        uint16_t GetIdVendor();
+        uint16_t GetIdProduct();
+        uint16_t GetBcdUSB();
+        uint16_t GetBDeviceClass();
+        uint16_t GetBDeviceSubClass();
+        uint8_t GetBDeviceProtocol();
+        uint8_t GetBMaxPacketSize0();
+        uint8_t GetIManufacturer();
+        uint8_t GetIProduct();
+        unsigned char* GetIManufacturerBuffer();
+        unsigned char* GetIProductBuffer();
+        uint8_t GetISerialNumber();
+        uint8_t GetBNumConfigurations();
 
 
 };

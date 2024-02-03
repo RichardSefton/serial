@@ -1,3 +1,5 @@
+#pragma once
+
 #include <libusb-1.0/libusb.h>
 #include <string>
 #include <vector>
@@ -21,15 +23,15 @@ class Devices
         Devices();
 
         //getters
-        int getErrorCode();
-        DevicesStatus getStatus();
-        ssize_t getDeviceCount();
-        std::vector<Device> getDeviceList();
+        int GetErrorCode();
+        DevicesStatus GetStatus();
+        ssize_t GetDeviceCount();
+        std::vector<Device> GetDeviceList();
 
         //deviceList CRUD
-        void addDevice(Device);
-        void removeDevice(Device);
-        void clearDeviceList();
-        Device getDeviceAtIndex(int);
-        Device getDeviceByiSerialNumber(uint8_t);
+        void AddDevice(Device);
+        void RemoveDevice(Device);
+        void ClearDeviceList();
+        Device GetDeviceAtIndex(int);
+        Device GetDeviceByiSerialNumber(uint8_t);
 };

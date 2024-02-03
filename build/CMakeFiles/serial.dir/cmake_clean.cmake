@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/serial.dir/main.cpp.o"
   "CMakeFiles/serial.dir/main.cpp.o.d"
+  "CMakeFiles/serial.dir/src/devices/device.cpp.o"
+  "CMakeFiles/serial.dir/src/devices/device.cpp.o.d"
+  "CMakeFiles/serial.dir/src/devices/devices.cpp.o"
+  "CMakeFiles/serial.dir/src/devices/devices.cpp.o.d"
   "CMakeFiles/serial.dir/src/terminal/terminal.cpp.o"
   "CMakeFiles/serial.dir/src/terminal/terminal.cpp.o.d"
   "serial"

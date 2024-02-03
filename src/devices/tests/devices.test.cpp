@@ -15,8 +15,8 @@ TEST(Devices, LoadsDevices)
     //Device test written for is a AVR Curiosity 1627
     Devices* devices = new Devices();
     
-    EXPECT_GE(devices->getErrorCode(), 0);
-    EXPECT_EQ(devices->getDeviceCount(), 1);
+    EXPECT_GE(devices->GetErrorCode(), 0);
+    EXPECT_EQ(devices->GetDeviceCount(), 1);
     
     delete(devices);
 }

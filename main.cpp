@@ -19,7 +19,7 @@ int main()
 
     while ((ch = getch()) != (int)24)
     {
-
+        
     }
 
     terminal.Kill();

@@ -35,17 +35,17 @@ Devices::Devices() :
 
             if (desc.iManufacturer) {
                 if (libusb_get_string_descriptor_ascii(handle, desc.iManufacturer, buffer, sizeof(buffer)) > 0) {
-                    newDevice.setIManufacturerBuffer(buffer, sizeof(buffer));
+                    newDevice.SetIManufacturerBuffer(buffer, sizeof(buffer));
                 }
             }
 
             if (desc.iProduct) {
                 if (libusb_get_string_descriptor_ascii(handle, desc.iProduct, buffer, sizeof(buffer)) > 0) {
-                    newDevice.setIProductBuffer(buffer, sizeof(buffer));
+                    newDevice.SetIProductBuffer(buffer, sizeof(buffer));
                 }
             }
 
-            this->addDevice(newDevice);
+            this->AddDevice(newDevice);
 
             libusb_close(handle);
         }
@@ -56,35 +56,35 @@ Devices::Devices() :
 }
 
 //getters
-int Devices::getErrorCode()
+int Devices::GetErrorCode()
 {
     return this->errorCode;
 }
-DevicesStatus Devices::getStatus()
+DevicesStatus Devices::GetStatus()
 {
     return this->status;
 }
-ssize_t Devices::getDeviceCount()
+ssize_t Devices::GetDeviceCount()
 {
     return this->deviceCount;
 }
-std::vector<Device> Devices::getDeviceList()
+std::vector<Device> Devices::GetDeviceList()
 {
     return this->deviceList;
 }
 
 //deviceList CRUD
-void Devices::addDevice(Device device)
+void Devices::AddDevice(Device device)
 {
     this->deviceList.push_back(device);
     this->deviceCount++;
 }
-void Devices::removeDevice(Device device)
+void Devices::RemoveDevice(Device device)
 {
     //find the index of the device and remove it from the vector
     for (std::vector<Device>::iterator it = this->deviceList.begin(); it != this->deviceList.end(); ++it)
     {
-        if (it->getISerialNumber() == device.getISerialNumber())
+        if (it->GetISerialNumber() == device.GetISerialNumber())
         {
             this->deviceList.erase(it);
             this->deviceCount--;
@@ -92,19 +92,19 @@ void Devices::removeDevice(Device device)
         }
     }
 }
-void Devices::clearDeviceList()
+void Devices::ClearDeviceList()
 {
     this->deviceList.clear();
 }
-Device Devices::getDeviceAtIndex(int index)
+Device Devices::GetDeviceAtIndex(int index)
 {
     return this->deviceList.at(index);
 }
-Device Devices::getDeviceByiSerialNumber(uint8_t iSerialNumber)
+Device Devices::GetDeviceByiSerialNumber(uint8_t iSerialNumber)
 {
     for (Device device : this->deviceList)
     {
-        if (device.getISerialNumber() == iSerialNumber)
+        if (device.GetISerialNumber() == iSerialNumber)
         {
             return device;
         }

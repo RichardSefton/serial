@@ -9,6 +9,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/data/Documents/code/cpp/serial/main.cpp" "CMakeFiles/serial.dir/main.cpp.o" "gcc" "CMakeFiles/serial.dir/main.cpp.o.d"
+  "/mnt/data/Documents/code/cpp/serial/src/devices/device.cpp" "CMakeFiles/serial.dir/src/devices/device.cpp.o" "gcc" "CMakeFiles/serial.dir/src/devices/device.cpp.o.d"
+  "/mnt/data/Documents/code/cpp/serial/src/devices/devices.cpp" "CMakeFiles/serial.dir/src/devices/devices.cpp.o" "gcc" "CMakeFiles/serial.dir/src/devices/devices.cpp.o.d"
   "/mnt/data/Documents/code/cpp/serial/src/terminal/terminal.cpp" "CMakeFiles/serial.dir/src/terminal/terminal.cpp.o" "gcc" "CMakeFiles/serial.dir/src/terminal/terminal.cpp.o.d"
   )
 

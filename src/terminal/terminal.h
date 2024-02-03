@@ -1,4 +1,8 @@
+#pragma once
+
 #include <ncurses.h>
+#include <devices.h>
+#include <device.h>
 
 enum SerialState {
     RUNNING,
@@ -17,6 +21,8 @@ class Terminal {
         State keypressecho;
         State functionkeys;
         State arrowkeys;
+        Devices devices;
+        State colour;
 
     public: 
         Terminal();
@@ -33,9 +39,18 @@ class Terminal {
         void DisableFunctionAndArrowKeys();
         void EnableFunctionAndArrowKeys();
 
+        void DisableColour();
+        void EnableColour();
+
         SerialState GetState();
         State GetLineBuffering();
         State GetKeyPressEcho();
         State GetFunctionKeys();
         State GetArrowKeys();
+
+        //data
+        void LoadDevices();
+
+        //ui
+        void PrintDeviceList();
 };
