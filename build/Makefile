@@ -152,6 +152,19 @@ serial_test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial_test.dir/build.make CMakeFiles/serial_test.dir/build
 .PHONY : serial_test/fast
 
+#=============================================================================
+# Target rules for targets named devices_test
+
+# Build rule for target.
+devices_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 devices_test
+.PHONY : devices_test
+
+# fast build rule for target.
+devices_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/devices_test.dir/build.make CMakeFiles/devices_test.dir/build
+.PHONY : devices_test/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -175,6 +188,78 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/serial.dir/build.make CMakeFiles/serial.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+src/devices/device.o: src/devices/device.cpp.o
+.PHONY : src/devices/device.o
+
+# target to build an object file
+src/devices/device.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/devices_test.dir/build.make CMakeFiles/devices_test.dir/src/devices/device.cpp.o
+.PHONY : src/devices/device.cpp.o
+
+src/devices/device.i: src/devices/device.cpp.i
+.PHONY : src/devices/device.i
+
+# target to preprocess a source file
+src/devices/device.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/devices_test.dir/build.make CMakeFiles/devices_test.dir/src/devices/device.cpp.i
+.PHONY : src/devices/device.cpp.i
+
+src/devices/device.s: src/devices/device.cpp.s
+.PHONY : src/devices/device.s
+
+# target to generate assembly for a file
+src/devices/device.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/devices_test.dir/build.make CMakeFiles/devices_test.dir/src/devices/device.cpp.s
+.PHONY : src/devices/device.cpp.s
+
+src/devices/devices.o: src/devices/devices.cpp.o
+.PHONY : src/devices/devices.o
+
+# target to build an object file
+src/devices/devices.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/devices_test.dir/build.make CMakeFiles/devices_test.dir/src/devices/devices.cpp.o
+.PHONY : src/devices/devices.cpp.o
+
+src/devices/devices.i: src/devices/devices.cpp.i
+.PHONY : src/devices/devices.i
+
+# target to preprocess a source file
+src/devices/devices.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/devices_test.dir/build.make CMakeFiles/devices_test.dir/src/devices/devices.cpp.i
+.PHONY : src/devices/devices.cpp.i
+
+src/devices/devices.s: src/devices/devices.cpp.s
+.PHONY : src/devices/devices.s
+
+# target to generate assembly for a file
+src/devices/devices.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/devices_test.dir/build.make CMakeFiles/devices_test.dir/src/devices/devices.cpp.s
+.PHONY : src/devices/devices.cpp.s
+
+src/devices/tests/devices.test.o: src/devices/tests/devices.test.cpp.o
+.PHONY : src/devices/tests/devices.test.o
+
+# target to build an object file
+src/devices/tests/devices.test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/devices_test.dir/build.make CMakeFiles/devices_test.dir/src/devices/tests/devices.test.cpp.o
+.PHONY : src/devices/tests/devices.test.cpp.o
+
+src/devices/tests/devices.test.i: src/devices/tests/devices.test.cpp.i
+.PHONY : src/devices/tests/devices.test.i
+
+# target to preprocess a source file
+src/devices/tests/devices.test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/devices_test.dir/build.make CMakeFiles/devices_test.dir/src/devices/tests/devices.test.cpp.i
+.PHONY : src/devices/tests/devices.test.cpp.i
+
+src/devices/tests/devices.test.s: src/devices/tests/devices.test.cpp.s
+.PHONY : src/devices/tests/devices.test.s
+
+# target to generate assembly for a file
+src/devices/tests/devices.test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/devices_test.dir/build.make CMakeFiles/devices_test.dir/src/devices/tests/devices.test.cpp.s
+.PHONY : src/devices/tests/devices.test.cpp.s
 
 src/terminal/terminal.o: src/terminal/terminal.cpp.o
 .PHONY : src/terminal/terminal.o
@@ -236,11 +321,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... devices_test"
 	@echo "... serial"
 	@echo "... serial_test"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/devices/device.o"
+	@echo "... src/devices/device.i"
+	@echo "... src/devices/device.s"
+	@echo "... src/devices/devices.o"
+	@echo "... src/devices/devices.i"
+	@echo "... src/devices/devices.s"
+	@echo "... src/devices/tests/devices.test.o"
+	@echo "... src/devices/tests/devices.test.i"
+	@echo "... src/devices/tests/devices.test.s"
 	@echo "... src/terminal/terminal.o"
 	@echo "... src/terminal/terminal.i"
 	@echo "... src/terminal/terminal.s"

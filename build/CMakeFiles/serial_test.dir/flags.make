@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/mnt/data/Documents/code/cpp/serial/src -I/mnt/data/Documents/code/cpp/serial/src/terminal
+CXX_INCLUDES = -I/usr/include/libusb-1.0 -I/mnt/data/Documents/code/cpp/serial/src -I/mnt/data/Documents/code/cpp/serial/src/terminal -I/mnt/data/Documents/code/cpp/serial/src/devices
 
 CXX_FLAGS = 
 

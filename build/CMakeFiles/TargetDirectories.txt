@@ -1,5 +1,6 @@
 /mnt/data/Documents/code/cpp/serial/build/CMakeFiles/serial.dir
 /mnt/data/Documents/code/cpp/serial/build/CMakeFiles/serial_test.dir
+/mnt/data/Documents/code/cpp/serial/build/CMakeFiles/devices_test.dir
 /mnt/data/Documents/code/cpp/serial/build/CMakeFiles/test.dir
 /mnt/data/Documents/code/cpp/serial/build/CMakeFiles/edit_cache.dir
 /mnt/data/Documents/code/cpp/serial/build/CMakeFiles/rebuild_cache.dir

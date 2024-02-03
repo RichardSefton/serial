@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/devices_test.dir/src/devices/tests/devices.test.cpp.o CMakeFiles/devices_test.dir/src/devices/devices.cpp.o CMakeFiles/devices_test.dir/src/devices/device.cpp.o -o devices_test  -lgtest -lgtest_main -lpthread -lusb-1.0 

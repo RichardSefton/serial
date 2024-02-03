@@ -61,4 +61,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/serial.dir/DependInfo.cmake"
   "CMakeFiles/serial_test.dir/DependInfo.cmake"
+  "CMakeFiles/devices_test.dir/DependInfo.cmake"
   )
