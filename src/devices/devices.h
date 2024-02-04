@@ -18,15 +18,21 @@ class Devices
         DevicesStatus status;
         ssize_t deviceCount;
         std::vector<Device> deviceList;
+        int activeDeviceIndex;
+        Device activeDevice;
 
     public:
         Devices();
+
+        //setters
+        void SetActiveDevice(int);
 
         //getters
         int GetErrorCode();
         DevicesStatus GetStatus();
         ssize_t GetDeviceCount();
         std::vector<Device> GetDeviceList();
+        int GetActiveDeviceIndex();
 
         //deviceList CRUD
         void AddDevice(Device);

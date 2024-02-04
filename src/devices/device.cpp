@@ -1,6 +1,23 @@
 #include "device.h"
 #include <string.h>
 
+Device::Device() : 
+    idVendor(0),
+    idProduct(0),
+    bcdUSB(0),
+    bDeviceClass(0),
+    bDeviceSubClass(0),
+    bDeviceProtocol(0),
+    bMaxPacketSize0(0),
+    iManufacturer(0),
+    iProduct(0),
+    iSerialNumber(0),
+    bNumConfigurations(0)
+{
+    memset(this->iManufacturerBuffer, 0, sizeof(this->iManufacturerBuffer));
+    memset(this->iProductBuffer, 0, sizeof(this->iProductBuffer));
+}
+
 Device::Device(libusb_device_descriptor* device)
 {
     this->idVendor = device->idVendor;

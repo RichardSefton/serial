@@ -21,6 +21,7 @@ class Device
         uint8_t bNumConfigurations;
     
     public:
+        Device();
         Device(libusb_device_descriptor*);
 
         //setters

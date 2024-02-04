@@ -19,7 +19,8 @@ int main()
 
     while ((ch = getch()) != (int)24)
     {
-        
+        terminal.HandleNavigation(ch);
+        terminal.PrintDeviceList();
     }
 
     terminal.Kill();

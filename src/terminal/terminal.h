@@ -1,8 +1,7 @@
 #pragma once
 
 #include <ncurses.h>
-#include <devices.h>
-#include <device.h>
+#include "devices.h"
 
 enum SerialState {
     RUNNING,
@@ -23,6 +22,9 @@ class Terminal {
         State arrowkeys;
         Devices devices;
         State colour;
+        int yPos;
+        int xPos;
+        int tableStartPos;
 
     public: 
         Terminal();
@@ -53,4 +55,5 @@ class Terminal {
 
         //ui
         void PrintDeviceList();
+        void HandleNavigation(int);
 };

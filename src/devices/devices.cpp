@@ -3,7 +3,8 @@
 
 Devices::Devices() :
     errorCode(0),
-    deviceCount(0)
+    deviceCount(0),
+    activeDeviceIndex(0)
 {
     libusb_context *ctx = nullptr;
     this->errorCode = libusb_init(&ctx);
@@ -51,8 +52,25 @@ Devices::Devices() :
         }
     }
 
+    if (this->deviceList.size() > 0)
+    {
+        this->status = DEVICE_LIST_LOADED;
+        activeDevice = this->deviceList.at(this->activeDeviceIndex);
+    }
+    else
+    {
+        this->status = NO_DEVICES;
+    }
+
     libusb_free_device_list(list, 1);
     libusb_exit(ctx);
+}
+
+//setters
+void Devices::SetActiveDevice(int index)
+{
+    this->activeDeviceIndex = index;
+    this->activeDevice = this->deviceList.at(index);
 }
 
 //getters
@@ -71,6 +89,10 @@ ssize_t Devices::GetDeviceCount()
 std::vector<Device> Devices::GetDeviceList()
 {
     return this->deviceList;
+}
+int Devices::GetActiveDeviceIndex()
+{
+    return this->activeDeviceIndex;
 }
 
 //deviceList CRUD

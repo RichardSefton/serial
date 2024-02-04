@@ -11,6 +11,9 @@ Terminal::Terminal()
     functionkeys = State::DISABLED;
     arrowkeys = State::DISABLED;
     colour = State::DISABLED;
+    tableStartPos = 1;
+    yPos = 1;
+    xPos = 0;
 }
 
 void Terminal::Run()
@@ -21,11 +24,7 @@ void Terminal::Run()
     DisableKeyPressEcho();
 
     this->LoadDevices();
-
-    if (this->devices.GetDeviceCount() > 0)
-    {
-        this->PrintDeviceList();
-    }
+    this->PrintDeviceList();
 
     this->state = SerialState::RUNNING;
     refresh();
@@ -154,6 +153,7 @@ void Terminal::PrintDeviceList()
     //ui setup
     init_pair(1, COLOR_BLACK, COLOR_YELLOW);
     init_pair(2, COLOR_WHITE, COLOR_BLACK);
+    init_pair(3, COLOR_WHITE, COLOR_BLUE);
 
     int width = getmaxx(stdscr);  // Get the width of the terminal
 
@@ -166,17 +166,51 @@ void Terminal::PrintDeviceList()
     attroff(COLOR_PAIR(1));
 
     //table data
-    attron(COLOR_PAIR(2));
-    std::vector<Device> devices = this->devices.GetDeviceList();
-    for (int i = 0; i < devices.size(); i++)
+    if (this->devices.GetDeviceCount() == 0)
     {
-        mvprintw(i + 1, 0, "%s", std::to_string(devices[i].GetIdProduct()).c_str());
-        unsigned char* pBuffer = devices[i].GetIProductBuffer();
-        mvprintw(i + 1, 15, "%s", reinterpret_cast<const char*>(pBuffer));
-        unsigned char* mBuffer = devices[i].GetIManufacturerBuffer();
-        mvprintw(i + 1, 35, "%s", reinterpret_cast<const char*>(mBuffer));
+        mvprintw(1, 0, "No devices found");
     }
-    attroff(COLOR_PAIR(2));
+    else
+    {
+        std::vector<Device> devices = this->devices.GetDeviceList();
+        for (int i = 0; i < devices.size(); i++)
+        {
+            i == this->devices.GetActiveDeviceIndex() ? attron(COLOR_PAIR(3)) : attroff(COLOR_PAIR(2));
+            mvhline(i + this->tableStartPos, 0, ' ', width);
+            mvprintw(i + this->tableStartPos, 0, "%s", std::to_string(devices[i].GetIdProduct()).c_str());
+            unsigned char* pBuffer = devices[i].GetIProductBuffer();
+            mvprintw(i + this->tableStartPos, 15, "%s", reinterpret_cast<const char*>(pBuffer));
+            unsigned char* mBuffer = devices[i].GetIManufacturerBuffer();
+            mvprintw(i + this->tableStartPos, 35, "%s", reinterpret_cast<const char*>(mBuffer));
+            i == this->devices.GetActiveDeviceIndex() ? attroff(COLOR_PAIR(3)) : attroff(COLOR_PAIR(2));
+        }
+    }
+
+    refresh();
+}
+
+void Terminal::HandleNavigation(int ch)
+{
+    move(this->yPos, this->xPos);
+
+    if (ch == KEY_UP)
+    {
+        if (this->yPos > this->tableStartPos)
+        {
+            this->yPos--;
+            this->devices.SetActiveDevice(this->yPos - this->tableStartPos);
+        }
+    }
+    if (ch == KEY_DOWN)
+    {
+        if (this->yPos < this->devices.GetDeviceCount())
+        {
+            this->yPos++;
+            this->devices.SetActiveDevice(this->yPos - this->tableStartPos);
+        }
+    }
+
+    move(this->yPos, this->xPos);
 
     refresh();
 }
