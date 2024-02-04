@@ -2,6 +2,7 @@
 
 #include <ncurses.h>
 #include "devices.h"
+#include <string>
 
 enum SerialState {
     RUNNING,
@@ -11,6 +12,11 @@ enum SerialState {
 enum State {
     ENABLED,
     DISABLED
+};
+
+enum InstructionSet {
+    DEVICE_LIST,
+    SERIAL_MONITOR,
 };
 
 class Terminal {
@@ -25,6 +31,8 @@ class Terminal {
         int yPos;
         int xPos;
         int tableStartPos;
+        InstructionSet instructionSet;
+        std::vector<std::string> instructionOptions;
 
     public: 
         Terminal();
@@ -56,4 +64,6 @@ class Terminal {
         //ui
         void PrintDeviceList();
         void HandleNavigation(int);
+        void UpdateInstructionSet();
+        void DrawOptions();
 };

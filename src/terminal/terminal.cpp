@@ -3,17 +3,19 @@
 #include "device.h"
 #include "devices.h"
 
-Terminal::Terminal()
+Terminal::Terminal() :
+    state(SerialState::STOPPED),
+    linebuffering(State::ENABLED),
+    keypressecho(State::ENABLED),
+    functionkeys(State::DISABLED),
+    arrowkeys(State::DISABLED),
+    devices(Devices()),
+    colour(State::DISABLED),
+    yPos(1),
+    xPos(0),
+    tableStartPos(1),
+    instructionSet(InstructionSet::DEVICE_LIST)
 {
-    state = SerialState::STOPPED;
-    linebuffering = State::ENABLED;
-    keypressecho = State::ENABLED;
-    functionkeys = State::DISABLED;
-    arrowkeys = State::DISABLED;
-    colour = State::DISABLED;
-    tableStartPos = 1;
-    yPos = 1;
-    xPos = 0;
 }
 
 void Terminal::Run()
@@ -25,6 +27,9 @@ void Terminal::Run()
 
     this->LoadDevices();
     this->PrintDeviceList();
+
+    this->UpdateInstructionSet();
+    this->DrawOptions();
 
     this->state = SerialState::RUNNING;
     refresh();
@@ -213,4 +218,45 @@ void Terminal::HandleNavigation(int ch)
     move(this->yPos, this->xPos);
 
     refresh();
+}
+
+void Terminal::UpdateInstructionSet()
+{
+    if (this->instructionSet == InstructionSet::DEVICE_LIST)
+    {
+        this->instructionOptions.push_back("[Ctrl+x/c] Quit");
+        this->instructionOptions.push_back("[Enter] Select Device");
+        this->instructionOptions.push_back("[Arrow Keys] Navigate");
+        this->instructionOptions.push_back("[F2] Baud Rate");
+    }
+
+    if (this->instructionSet == InstructionSet::SERIAL_MONITOR)
+    {
+        this->instructionOptions.push_back("[Ctrl+x/c] Quit");
+        this->instructionOptions.push_back("[F3] Device List");
+        this->instructionOptions.push_back("[F2] Baud Rate");
+        this->instructionOptions.push_back("[F4] Monitor");
+        this->instructionOptions.push_back("[F6] ASCII");
+        this->instructionOptions.push_back("[F7] Hex");
+        this->instructionOptions.push_back("[Enter] Send");
+    }
+}
+
+void Terminal::DrawOptions()
+{
+    // Calculate spacing based on the number of options and the screen width
+    int spacing = COLS / this->instructionOptions.size();
+
+    init_pair(1, COLOR_WHITE, COLOR_BLACK);
+    
+    attron(COLOR_PAIR(1));
+    int width = getmaxx(stdscr);  // Get the width of the terminal
+    mvhline(LINES - 2, 0, '-', width);
+    for (int i = 0; i < this->instructionOptions.size(); i++) {
+        // Move to the correct position and print each option
+        // We use LINES - 1 to get the bottom row of the terminal
+        mvprintw(LINES - 1, i * spacing, "%s", this->instructionOptions[i].c_str());
+    }
+    attroff(COLOR_PAIR(1));
+    refresh();  // Update the screen
 }
