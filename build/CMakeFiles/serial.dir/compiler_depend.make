@@ -204,7 +204,33 @@ CMakeFiles/serial.dir/main.cpp.o: ../main.cpp \
   /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
   /usr/include/x86_64-linux-gnu/bits/sigthread.h \
-  /usr/include/x86_64-linux-gnu/bits/signal_ext.h
+  /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
+  /usr/include/c++/11/thread \
+  /usr/include/c++/11/bits/std_thread.h \
+  /usr/include/c++/11/exception \
+  /usr/include/c++/11/bits/exception_ptr.h \
+  /usr/include/c++/11/bits/cxxabi_init_exception.h \
+  /usr/include/c++/11/typeinfo \
+  /usr/include/c++/11/bits/nested_exception.h \
+  /usr/include/c++/11/tuple \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
+  /usr/include/c++/11/array \
+  /usr/include/c++/11/bits/uses_allocator.h \
+  /usr/include/c++/11/bits/invoke.h \
+  /usr/include/c++/11/bits/refwrap.h \
+  /usr/include/c++/11/bits/unique_ptr.h \
+  /usr/include/c++/11/bits/this_thread_sleep.h \
+  /usr/include/c++/11/chrono \
+  /usr/include/c++/11/ratio \
+  /usr/include/c++/11/limits \
+  /usr/include/c++/11/ctime \
+  /usr/include/c++/11/bits/parse_numbers.h \
+  /usr/include/c++/11/atomic \
+  /usr/include/c++/11/bits/atomic_base.h \
+  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
+  /usr/include/string.h \
+  /usr/include/strings.h
 
 CMakeFiles/serial.dir/src/devices/device.cpp.o: ../src/devices/device.cpp \
   /usr/include/stdc-predef.h \
@@ -662,8 +688,6 @@ CMakeFiles/serial.dir/src/terminal/terminal.cpp.o: ../src/terminal/terminal.cpp 
 
 /usr/include/c++/11/bits/basic_ios.h:
 
-/usr/include/c++/11/bits/streambuf.tcc:
-
 ../src/terminal/terminal.cpp:
 
 /usr/include/c++/11/stdexcept:
@@ -676,15 +700,35 @@ CMakeFiles/serial.dir/src/terminal/terminal.cpp.o: ../src/terminal/terminal.cpp 
 
 /usr/include/c++/11/bits/ios_base.h:
 
+../src/devices/devices.cpp:
+
+/usr/include/string.h:
+
+/usr/include/c++/11/bits/streambuf.tcc:
+
+/usr/include/c++/11/bits/atomic_lockfree_defines.h:
+
+/usr/include/c++/11/bits/parse_numbers.h:
+
+/usr/include/c++/11/limits:
+
+/usr/include/c++/11/ratio:
+
+/usr/include/c++/11/ostream:
+
+/usr/include/c++/11/bits/unique_ptr.h:
+
+/usr/include/c++/11/bits/refwrap.h:
+
+/usr/include/c++/11/bits/uses_allocator.h:
+
+/usr/include/c++/11/array:
+
 /usr/include/c++/11/bits/nested_exception.h:
 
 /usr/include/c++/11/exception:
 
-/usr/include/c++/11/ostream:
-
-../src/devices/devices.cpp:
-
-/usr/include/string.h:
+/usr/include/c++/11/bits/std_thread.h:
 
 /usr/include/x86_64-linux-gnu/bits/signal_ext.h:
 
@@ -750,11 +794,15 @@ CMakeFiles/serial.dir/src/terminal/terminal.cpp.o: ../src/terminal/terminal.cpp 
 
 /usr/include/x86_64-linux-gnu/bits/errno.h:
 
+/usr/include/c++/11/utility:
+
 /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h:
 
 /usr/include/errno.h:
 
 /usr/include/c++/11/cerrno:
+
+/usr/include/c++/11/chrono:
 
 /usr/include/c++/11/cstdio:
 
@@ -777,6 +825,8 @@ CMakeFiles/serial.dir/src/terminal/terminal.cpp.o: ../src/terminal/terminal.cpp 
 /usr/include/c++/11/bits/functional_hash.h:
 
 /usr/include/c++/11/string_view:
+
+/usr/include/c++/11/bits/this_thread_sleep.h:
 
 /usr/include/c++/11/bits/stl_construct.h:
 
@@ -804,6 +854,8 @@ CMakeFiles/serial.dir/src/terminal/terminal.cpp.o: ../src/terminal/terminal.cpp 
 
 /usr/include/features-time64.h:
 
+/usr/include/c++/11/atomic:
+
 /usr/include/c++/11/bits/exception_defines.h:
 
 /usr/include/c++/11/bits/istream.tcc:
@@ -812,7 +864,11 @@ CMakeFiles/serial.dir/src/terminal/terminal.cpp.o: ../src/terminal/terminal.cpp 
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
+/usr/include/c++/11/bits/stl_relops.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
+
+/usr/include/c++/11/bits/invoke.h:
 
 /usr/include/x86_64-linux-gnu/bits/timex.h:
 
@@ -900,6 +956,8 @@ CMakeFiles/serial.dir/src/terminal/terminal.cpp.o: ../src/terminal/terminal.cpp 
 
 /usr/include/features.h:
 
+/usr/include/c++/11/bits/atomic_base.h:
+
 /usr/include/c++/11/ext/numeric_traits.h:
 
 ../main.cpp:
@@ -932,6 +990,8 @@ CMakeFiles/serial.dir/src/terminal/terminal.cpp.o: ../src/terminal/terminal.cpp 
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
+/usr/include/c++/11/thread:
+
 /usr/include/stdio.h:
 
 /usr/include/c++/11/ios:
@@ -947,6 +1007,8 @@ CMakeFiles/serial.dir/src/terminal/terminal.cpp.o: ../src/terminal/terminal.cpp 
 /usr/include/unctrl.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
+
+/usr/include/c++/11/ctime:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
@@ -1023,6 +1085,8 @@ CMakeFiles/serial.dir/src/terminal/terminal.cpp.o: ../src/terminal/terminal.cpp 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
 /usr/include/x86_64-linux-gnu/sys/time.h:
+
+/usr/include/c++/11/tuple:
 
 /usr/include/c++/11/type_traits:
 

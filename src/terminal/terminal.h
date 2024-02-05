@@ -15,8 +15,9 @@ enum State {
 };
 
 enum InstructionSet {
-    DEVICE_LIST,
-    SERIAL_MONITOR,
+    INST_NO_DEVICES,
+    INST_DEVICE_LIST,
+    INST_SERIAL_MONITOR,
 };
 
 class Terminal {
@@ -33,6 +34,7 @@ class Terminal {
         int tableStartPos;
         InstructionSet instructionSet;
         std::vector<std::string> instructionOptions;
+        bool exit;
 
     public: 
         Terminal();
@@ -60,10 +62,18 @@ class Terminal {
 
         //data
         void LoadDevices();
+        // int HotPlugCallback(struct libusb_context*, struct libusb_device*, libusb_hotplug_event, void*);
+        void HotPlugHandler(libusb_context*, libusb_device*, libusb_hotplug_event);
+
+        // Static bridge function
+        static int LIBUSB_CALL HotPlugCallbackStatic(libusb_context*, libusb_device*, libusb_hotplug_event, void*);
 
         //ui
+        void EmptyDeviceList();
         void PrintDeviceList();
         void HandleNavigation(int);
         void UpdateInstructionSet();
         void DrawOptions();
+        void SetExit(bool);
+        bool GetExit();
 };
