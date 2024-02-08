@@ -77,4 +77,5 @@ class Terminal {
         void SetExit(bool);
         bool GetExit();
         void BaudRateWindow();
+        void DrawSerialMonitor();
 };

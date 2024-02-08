@@ -61,7 +61,6 @@ void uiHandlingThread()
             break;
         }
         terminal.HandleNavigation(ch);
-        terminal.PrintDeviceList();
     }
 
     terminal.SetExit(true);

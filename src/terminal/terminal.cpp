@@ -245,6 +245,7 @@ void Terminal::HandleNavigation(int ch)
         {
             this->yPos--;
             this->devices.SetActiveDevice(this->yPos - this->tableStartPos);
+            this->PrintDeviceList();
         }
     }
     if (ch == KEY_DOWN)
@@ -253,11 +254,18 @@ void Terminal::HandleNavigation(int ch)
         {
             this->yPos++;
             this->devices.SetActiveDevice(this->yPos - this->tableStartPos);
+            this->PrintDeviceList();
         }
     }
     if (ch == KEY_F(2))
     {
         this->BaudRateWindow();
+    }
+    if (ch == 10)
+    {
+        this->instructionSet = InstructionSet::INST_SERIAL_MONITOR;
+        this->DrawSerialMonitor();
+        this->UpdateInstructionSet();
     }
 
     move(this->yPos, this->xPos);
@@ -365,5 +373,11 @@ void Terminal::BaudRateWindow()
         this->PrintDeviceList();
         refresh();
     }
+}
+
+void Terminal::DrawSerialMonitor()
+{
+    clear();
+    refresh();
 }
 
