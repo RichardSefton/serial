@@ -76,4 +76,5 @@ class Terminal {
         void DrawOptions();
         void SetExit(bool);
         bool GetExit();
+        void BaudRateWindow();
 };

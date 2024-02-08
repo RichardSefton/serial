@@ -65,7 +65,6 @@ void uiHandlingThread()
     }
 
     terminal.SetExit(true);
-    // keepRunning.store(false);
 }
 
 int main()

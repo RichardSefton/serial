@@ -204,6 +204,7 @@ void Terminal::PrintDeviceList()
     mvprintw(0, 0, "Device ID");
     mvprintw(0, 15, "Device Name");
     mvprintw(0, 35, "Device Type");
+    mvprintw(0, 70, "Baud Rate");
     attroff(COLOR_PAIR(1));
 
     //table data
@@ -227,6 +228,7 @@ void Terminal::PrintDeviceList()
             unsigned char* mBuffer = devices[i].GetIManufacturerBuffer();
             mvprintw(i + this->tableStartPos, 35, "%s", reinterpret_cast<const char*>(mBuffer));
             i == this->devices.GetActiveDeviceIndex() ? attroff(COLOR_PAIR(3)) : attroff(COLOR_PAIR(2));
+            mvprintw(i + this->tableStartPos, 70, "%d", devices[i].GetBaudRate());
         }
     }
 
@@ -252,6 +254,10 @@ void Terminal::HandleNavigation(int ch)
             this->yPos++;
             this->devices.SetActiveDevice(this->yPos - this->tableStartPos);
         }
+    }
+    if (ch == KEY_F(2))
+    {
+        this->BaudRateWindow();
     }
 
     move(this->yPos, this->xPos);
@@ -317,5 +323,47 @@ void Terminal::SetExit(bool exit)
 bool Terminal::GetExit()
 {
     return this->exit;
+}
+
+void Terminal::BaudRateWindow()
+{
+    int win_width = 40;
+    int win_height = 4;
+    int starty = (LINES - win_height) / 2;  // Calculating position for the window to be center
+    int startx = (COLS - win_width) / 2;
+    
+    init_pair(5, COLOR_WHITE, COLOR_BLUE);
+    init_pair(6, COLOR_BLACK, COLOR_WHITE);
+
+    WINDOW* baudWin = newwin(win_height, win_width, starty, startx);
+
+    box(baudWin, 0, 0);   // Draw a box around the window
+    wbkgd(baudWin, COLOR_PAIR(5) | ' ');
+    mvwprintw(baudWin, 1, 1, "Enter baud rate: ");
+    // Highlight the input area
+    wattron(baudWin, COLOR_PAIR(6));
+    // Assuming the input field starts at (1, 18), with a length of 20 characters
+    mvwhline(baudWin, 1, 18, ' ', 20); // Prepare the input area with spaces
+    this->EnableKeyPressEcho(); // Enable echoing back what user types
+    char baudStr[20];
+    wgetstr(baudWin, baudStr); // Get the user input
+    this->DisableKeyPressEcho();
+    wattroff(baudWin, COLOR_PAIR(6));
+
+    // Optional: Clean up the window
+    werase(baudWin); // Erase window content
+    wrefresh(baudWin); // Refresh it to apply erase
+    delwin(baudWin); // Delete the window
+    
+    clear();
+    this->PrintDeviceList();
+    this->DrawOptions();
+    refresh();
+    if (baudStr[0] != '\0')
+    {
+        this->devices.SetActiveDeviceBaudRate(std::stoi(baudStr));
+        this->PrintDeviceList();
+        refresh();
+    }
 }
 

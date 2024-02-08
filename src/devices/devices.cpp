@@ -70,7 +70,13 @@ Devices::Devices() :
 void Devices::SetActiveDevice(int index)
 {
     this->activeDeviceIndex = index;
-    this->activeDevice = this->deviceList.at(index);
+    Device device = this->deviceList.at(index);
+    this->activeDevice = device;
+}
+void Devices::SetActiveDeviceBaudRate(int baudRate)
+{
+    this->activeDevice.SetBaudRate(baudRate);
+    this->UpdateDeviceAtIndex(this->activeDeviceIndex, this->activeDevice);
 }
 
 //getters
@@ -132,4 +138,9 @@ Device Devices::GetDeviceByiSerialNumber(uint8_t iSerialNumber)
         }
     }
     return Device(nullptr);
+}
+
+void Devices::UpdateDeviceAtIndex(int index, Device device)
+{
+    this->deviceList.at(index) = device;
 }

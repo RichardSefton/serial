@@ -26,6 +26,7 @@ class Devices
 
         //setters
         void SetActiveDevice(int);
+        void SetActiveDeviceBaudRate(int);
 
         //getters
         int GetErrorCode();
@@ -40,4 +41,5 @@ class Devices
         void ClearDeviceList();
         Device GetDeviceAtIndex(int);
         Device GetDeviceByiSerialNumber(uint8_t);
+        void UpdateDeviceAtIndex(int, Device);
 };

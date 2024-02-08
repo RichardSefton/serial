@@ -19,6 +19,7 @@ class Device
         unsigned char iProductBuffer[256];
         uint8_t iSerialNumber;
         uint8_t bNumConfigurations;
+        int baudRate;
     
     public:
         Device();
@@ -38,6 +39,7 @@ class Device
         void SetIProductBuffer(unsigned char*, size_t);
         void SetISerialNumber(uint8_t);
         void SetBNumConfigurations(uint8_t);
+        void SetBaudRate(int);
 
         //getters
         uint16_t GetIdVendor();
@@ -53,6 +55,5 @@ class Device
         unsigned char* GetIProductBuffer();
         uint8_t GetISerialNumber();
         uint8_t GetBNumConfigurations();
-
-
+        int GetBaudRate();
 };

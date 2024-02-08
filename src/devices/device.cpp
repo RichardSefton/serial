@@ -1,5 +1,6 @@
 #include "device.h"
 #include <string.h>
+#include <iostream>
 
 Device::Device() : 
     idVendor(0),
@@ -12,7 +13,8 @@ Device::Device() :
     iManufacturer(0),
     iProduct(0),
     iSerialNumber(0),
-    bNumConfigurations(0)
+    bNumConfigurations(0),
+    baudRate(9600)
 {
     memset(this->iManufacturerBuffer, 0, sizeof(this->iManufacturerBuffer));
     memset(this->iProductBuffer, 0, sizeof(this->iProductBuffer));
@@ -31,6 +33,7 @@ Device::Device(libusb_device_descriptor* device)
     this->iProduct = device->iProduct;
     this->iSerialNumber = device->iSerialNumber;
     this->bNumConfigurations = device->bNumConfigurations;
+    this->baudRate = 9600;
 }
 
 //setters
@@ -92,6 +95,10 @@ void Device::SetBNumConfigurations(uint8_t bNumConfigurations)
 {
     this->bNumConfigurations = bNumConfigurations;
 }
+void Device::SetBaudRate(int baudRate)
+{
+    this->baudRate = baudRate;
+}
 
 //getters
 uint16_t Device::GetIdVendor()
@@ -145,4 +152,8 @@ uint8_t Device::GetISerialNumber()
 uint8_t Device::GetBNumConfigurations()
 {
     return this->bNumConfigurations;
+}
+int Device::GetBaudRate()
+{
+    return this->baudRate;
 }
